@@ -53,7 +53,7 @@ export class UrlController {
 
   @UseGuards(jwtAuthGuard)
   @Put(':url/reactivate')
-  reactivateUrl(@Param('url') url, @Body() data, @Request() req) {
+  reactivateUrl(@Param('url') url, @Request() req) {
     return this.urlService.reactivateUrl(url, req.user);
   }
 

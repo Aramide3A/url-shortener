@@ -1,6 +1,4 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 import { UserModule } from './user/user.module';
 import { PrismaService } from './prisma/prisma.service';
@@ -30,9 +28,8 @@ import { ScheduleModule } from '@nestjs/schedule';
       isGlobal: true,
       ttl: 300000,
     }),
-    ScheduleModule.forRoot()
+    ScheduleModule.forRoot(),
   ],
-  controllers: [AppController],
-  providers: [AppService, PrismaService],
+  providers: [ PrismaService],
 })
 export class AppModule {}
